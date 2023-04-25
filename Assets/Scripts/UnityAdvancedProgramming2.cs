@@ -72,30 +72,30 @@ public class UnityAdvancedProgramming2 : MonoBehaviour
 
 
         //4. napisi programa koja go naoga najgolemiot i najmaliot element od nizata
-        int[] ages1 = new int[] {50,11,15,20,13,3  };
-        if (ages1.Length == 0)
-        {
-            Debug.Log("Vasata niza e prazna");
-        }
-        else
-        {
-            int biggestElement = ages1[ages1.Length-1];
-            int smallestElement = ages1[ages1.Length - 1];
-            for (int i = 0; i < ages1.Length; i++)
-            {
-                if (ages1[i] > biggestElement)
-                {
-                    biggestElement = ages1[i];
-                }
-                if (ages1[i] < smallestElement)
-                {
-                    smallestElement = ages1[i];
-                }
-            }
+        //int[] ages1 = new int[] {50,11,15,20,13,3  };
+        //if (ages1.Length == 0)
+        //{
+        //    Debug.Log("Vasata niza e prazna");
+        //}
+        //else
+        //{
+        //    int biggestElement = ages1[ages1.Length-1];
+        //    int smallestElement = ages1[ages1.Length - 1];
+        //    for (int i = 0; i < ages1.Length; i++)
+        //    {
+        //        if (ages1[i] > biggestElement)
+        //        {
+        //            biggestElement = ages1[i];
+        //        }
+        //        if (ages1[i] < smallestElement)
+        //        {
+        //            smallestElement = ages1[i];
+        //        }
+        //    }
 
-            Debug.Log("biggest" + biggestElement);
-            Debug.Log("smallest" + smallestElement);
-        }
+        //    Debug.Log("biggest" + biggestElement);
+        //    Debug.Log("smallest" + smallestElement);
+        //}
         //int biggestElement = ages1[0];
         //int smallestElement = ages1[0];
         //for(int i =1;i < ages1.Length; i++)
@@ -112,7 +112,19 @@ public class UnityAdvancedProgramming2 : MonoBehaviour
 
         //Debug.Log("biggest" + biggestElement);
         //Debug.Log("smallest" + smallestElement);
+
+        //{ (1*1*1), (2*2*2), (3*3*3), (4*4*4), (5*5*5) } | 1, 8,,, .. 125
+        int[] array = new int[5];
+        for (int i = 1; i <= array.Length; i++)
+        {
+            array[i-1] = i*i*i;
+        }
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            Debug.Log(array[i]);
+        }
     }
 
-    
+
 }
