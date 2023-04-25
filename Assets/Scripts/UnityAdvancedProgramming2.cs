@@ -40,9 +40,9 @@ public class UnityAdvancedProgramming2 : MonoBehaviour
         //}
 
 
-        int[] ages1 = new int[] { 10, 11, 15, 20, 13, 3 }; // nacin 1 na inic.
+        /*int[] ages1 = new int[] { 10, 11, 15, 20, 13, 3 };*/ // nacin 1 na inic.
         //3 Kreirajte nova niza ages3
-        int[] ages3 = new int[ages1.Length];
+        //int[] ages3 = new int[ages1.Length];
         //a. i ispolnete ja so istite elementi kako nizata ages1
         //b. so kvadratite od elemenite od nizata ages1 -> 100, 121, 225, 400, 169, 9
         //c. presmetaj ja sumata na elementite od a i b
@@ -51,20 +51,67 @@ public class UnityAdvancedProgramming2 : MonoBehaviour
         //    ages3[i] = ages1[i];
         //    Debug.Log(ages3[i]);
         //}
-        for (int i = 0; i < ages3.Length; i++)
-        {
-            ages3[i] = ages1[i]* ages1[i];
-            Debug.Log(ages3[i]);
-        }
-        int suma1 = 0;
-        int suma2 = 0;
-        for (int i = 0; i < ages3.Length; i++)
-        {
-            suma1 += ages1[i];
-            suma2 += ages3[i];
-        }
-        Debug.Log($"{suma1} {suma2}");
+        //for (int i = 0; i < ages3.Length; i++)
+        //{
+        //    ages3[i] = ages1[i]* ages1[i];
+        //    Debug.Log(ages3[i]);
+        //}
+        //int suma1 = 0;
+        //int suma2 = 0;
+        //for (int i = 0; i < ages3.Length; i++)
+        //{
+        //    suma1 += ages1[i];
+        //    suma2 += ages3[i];
+        //}
+        //Debug.Log($"{suma1} {suma2}");
 
+
+        //int num = 0;
+        //num = num + 2;
+        //num += 2;
+
+
+        //4. napisi programa koja go naoga najgolemiot i najmaliot element od nizata
+        int[] ages1 = new int[] {50,11,15,20,13,3  };
+        if (ages1.Length == 0)
+        {
+            Debug.Log("Vasata niza e prazna");
+        }
+        else
+        {
+            int biggestElement = ages1[ages1.Length-1];
+            int smallestElement = ages1[ages1.Length - 1];
+            for (int i = 0; i < ages1.Length; i++)
+            {
+                if (ages1[i] > biggestElement)
+                {
+                    biggestElement = ages1[i];
+                }
+                if (ages1[i] < smallestElement)
+                {
+                    smallestElement = ages1[i];
+                }
+            }
+
+            Debug.Log("biggest" + biggestElement);
+            Debug.Log("smallest" + smallestElement);
+        }
+        //int biggestElement = ages1[0];
+        //int smallestElement = ages1[0];
+        //for(int i =1;i < ages1.Length; i++)
+        //{
+        //    if (ages1[i] > biggestElement)
+        //    {
+        //        biggestElement = ages1[i];
+        //    }
+        //    if (ages1[i] < smallestElement)
+        //    {
+        //        smallestElement = ages1[i];
+        //    }
+        //}
+
+        //Debug.Log("biggest" + biggestElement);
+        //Debug.Log("smallest" + smallestElement);
     }
 
     
