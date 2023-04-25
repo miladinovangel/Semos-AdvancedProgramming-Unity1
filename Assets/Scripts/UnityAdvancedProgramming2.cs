@@ -14,8 +14,8 @@ public class UnityAdvancedProgramming2 : MonoBehaviour
         //    Debug.Log(i);
         //}
 
-        int age = 5; // deklaracija i inic. na promenliva
-        Debug.Log(age); // pecatenje na promenliva
+        //int age = 5; // deklaracija i inic. na promenliva
+        //Debug.Log(age); // pecatenje na promenliva
 
 
         int[] ages1 = new int[] { 10, 11, 15, 20, 13, 3 }; // nacin 1 na inic.
@@ -23,6 +23,17 @@ public class UnityAdvancedProgramming2 : MonoBehaviour
 
         //Debug.Log(ages1[2]*ages2[2]);
         // So pomos na ciklus, ispecatete gi site elementi od dvete nizi
+
+
+        for(int i = 0; i < ages1.Length; i++)
+        {
+            Debug.Log(ages1[i]);
+        }
+        Debug.Log("");
+        for (int i = 0; i < ages2.Length; i++)
+        {
+            Debug.Log(ages2[i]);
+        }
     }
 
     
