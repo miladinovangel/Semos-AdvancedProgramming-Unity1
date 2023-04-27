@@ -114,16 +114,23 @@ public class UnityAdvancedProgramming2 : MonoBehaviour
         //Debug.Log("smallest" + smallestElement);
 
         //{ (1*1*1), (2*2*2), (3*3*3), (4*4*4), (5*5*5) } | 1, 8,,, .. 125
-        int[] array = new int[5];
-        for (int i = 1; i <= array.Length; i++)
-        {
-            array[i-1] = i*i*i;
-        }
 
-        for (int i = 0; i < array.Length; i++)
-        {
-            Debug.Log(array[i]);
-        }
+        //int[] array = new int[5];
+        //for (int i = 1; i <= array.Length; i++) // dodeluvanje vrednosti na nizata
+        //{
+        //    array[i-1] = i*i*i;
+        //}
+        //for (int i = 0; i < 5; i++)
+        //{
+        //    array[i] = (i + 1) * (i + 1) * (i + 1);
+        //}
+
+
+        // pecatenje na nizata
+        //for (int i = 0; i < array.Length; i++)
+        //{
+        //    Debug.Log(array[i]);
+        //}
     }
 
 
