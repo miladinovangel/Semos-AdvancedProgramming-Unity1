@@ -25,11 +25,11 @@ public class Enemy : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            Rotate();
+            Rotate(false);
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            
+            Rotate(true);
         }
         // so drzenje left i right arrow, objektot da se rotira na levo/desno
         //transform.eulerAngles
@@ -48,10 +48,19 @@ public class Enemy : MonoBehaviour
         position.z -= speed * Time.deltaTime;
         transform.position = position;
     }
-    private void Rotate()
+
+    private void Rotate(bool rotateLeft)
     {
         Vector3 rotation = transform.eulerAngles;
-        rotation.y -= rotationSpeed * Time.deltaTime;
+        //if (rotateLeft) // ternary operator
+        //{
+        //    rotation.y -= rotationSpeed * Time.deltaTime;
+        //}
+        //else
+        //{
+        //    rotation.y += rotationSpeed * Time.deltaTime;
+        //}
+        rotation.y += (rotateLeft ? -1 : 1) * rotationSpeed * Time.deltaTime;
         transform.eulerAngles = rotation;
     }
 
