@@ -6,31 +6,27 @@ public class Enemy : MonoBehaviour
 {
     public int speed = 1;
     public float rotationSpeed = 0.5f;
-    //public Vector2 direction = Vector2.right;
 
-    private void Start()
-    {
-        
-    }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            Move(true);
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            Move(false);
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            Rotate(false);
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            Rotate(true);
-        }
+        Move();
+        //if (Input.GetKey(KeyCode.UpArrow))
+        //{
+        //    Move();
+        //}
+        //else if (Input.GetKey(KeyCode.DownArrow))
+        //{
+        //    Move();
+        //}
+        //else if (Input.GetKey(KeyCode.RightArrow))
+        //{
+        //    Rotate(false);
+        //}
+        //else if (Input.GetKey(KeyCode.LeftArrow))
+        //{
+        //    Rotate(true);
+        //}
         // so drzenje left i right arrow, objektot da se rotira na levo/desno
         //transform.eulerAngles
 
@@ -39,10 +35,9 @@ public class Enemy : MonoBehaviour
         // koga ke drzite na strelkata nagore, enemy objektot da se dvizi napred
         //Move();
     }
-
    
 
-    private void Move(bool moveForward)
+    public virtual void Move()
     {
         Vector3 position = transform.position;
         position.z -= speed * Time.deltaTime;
