@@ -52,14 +52,6 @@ public class Enemy : MonoBehaviour
     private void Rotate(bool rotateLeft)
     {
         Vector3 rotation = transform.eulerAngles;
-        //if (rotateLeft) // ternary operator
-        //{
-        //    rotation.y -= rotationSpeed * Time.deltaTime;
-        //}
-        //else
-        //{
-        //    rotation.y += rotationSpeed * Time.deltaTime;
-        //}
         rotation.y += (rotateLeft ? -1 : 1) * rotationSpeed * Time.deltaTime;
         transform.eulerAngles = rotation;
     }
@@ -67,3 +59,15 @@ public class Enemy : MonoBehaviour
 
     // kodot so dvizenje stavete go vo funkcija Move
 }
+
+
+// 2 del od parcijalnata klasa PartialClassTest
+//partial class PartialClassTest
+//{
+//    public int pt3;
+
+//    public void Test()
+//    {
+
+//    }
+//}

@@ -6,11 +6,11 @@ public class Inheritance : MonoBehaviour
 {
     private void Start()
     {
-        Roditel parent = new Roditel("white", "blue", 180);
-        parent.Jump();
+        //Roditel parent = new Roditel("white", "blue", 180);
+        //parent.Jump();
 
-        Dete child1 = new Dete();
-        child1.Jump();
+        //Dete child1 = new Dete();
+        //child1.Jump();
         //?
 
         //Dete child2 = new Dete("white", "green", 50);
@@ -19,6 +19,14 @@ public class Inheritance : MonoBehaviour
         //child2.height = 55;
         //child2.school = "Semos";
         //child2.gender = "test";
+
+        // koga rabotime so abstract klasa, od nea ne mozeme da kreirame instanci/objekti
+        //AbstractRoditel abstractParent = new AbstractRoditel(); // ova ne funkcionira
+        //DeteOdAbstractRoditel deteOdAbstractRoditel = new DeteOdAbstractRoditel();
+        //deteOdAbstractRoditel.Learn();
+
+        //PartialClassTest pct = new PartialClassTest();
+        //pct.Test();
     }
 }
 
@@ -99,4 +107,55 @@ class Dete : Roditel //dete koja nasleduva od klasata Roditel
         base.Jump();
         Debug.Log("Dete:Jump");
     }
+}
+
+
+// postoi nacin kako od nekoja klasa da ne moze da kreirame instanci
+abstract class AbstractRoditel
+{
+    public string skinColor;
+    public string eyeColor;
+
+    public virtual void Jump()
+    {
+        Debug.Log("Roditel:Jump");
+    }
+
+    public abstract void Learn(); // abstraktni funkcii nemaat nikakva implementacija. Nivnata implementacija treba da bide vo dete klasata
+}
+
+class DeteOdAbstractRoditel : AbstractRoditel
+{
+    public override void Learn()
+    {
+        //base.Learn(); ne e vozmozno da se povika base abstract funkcija 
+        Debug.Log("Learning");
+    }
+
+    public override void Jump()
+    {
+        base.Jump();
+    }
+}
+
+class A // po default ovaa klasa nasleduva od object klasa od C#
+{
+
+}
+
+// klasa od koja e zabraneto da se nasleduva
+//sealed class ZabranetoNasleduvanje
+//{
+
+//}
+
+//class Test : ZabranetoNasleduvanje // ni dava greska
+//{
+
+//}
+
+partial class PartialClassTest
+{
+    public int pt1;
+    public string pt2;
 }
