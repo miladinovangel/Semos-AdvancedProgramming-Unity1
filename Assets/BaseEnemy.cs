@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// ENCAPSULACIJA - 
+
 public abstract class BaseEnemy : MonoBehaviour
 {
-    public float speed = 10;
-    public int health = 100;
-    public float jumpForce = 1;
-    public Rigidbody rb;
+    [SerializeField] // ovozmozuva private promenlivi da se menuvaat/gledaat vo inspektorot
+    private float speed = 10;
+    [SerializeField]
+    private int health = 100;
+    [SerializeField]
+    protected float jumpForce = 1;
+    [SerializeField]
+    protected Rigidbody rb;
 
     public void Move() // dvizenje
     {
@@ -16,18 +22,18 @@ public abstract class BaseEnemy : MonoBehaviour
         transform.position = position;
     }
 
-    public void Jump()
+    public virtual void Jump()
     {
         rb.AddForce(Vector3.up * jumpForce);
     }
 
-    public void Die()
+    private void Die()
     {
         //Destroy(gameObject);
         gameObject.SetActive(false);
     }
 
-    public void DecreaseHealth()
+    private void DecreaseHealth()
     {
         health--;
         if (health == 0)

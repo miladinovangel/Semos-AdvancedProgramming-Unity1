@@ -4,26 +4,31 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public BaseEnemy enemy;
-    public bool toa = false;
+    [SerializeField]
+    private TeleportingEnemy tpEnemy;
+    [SerializeField]
+    private BlinkingEnemy blinkEnemy;
+
+    private bool gameStarted = false;
 
     // koga ke klikneme na kopceto play, da pocneme od ovde da ja povikuvame funkcijata Move od enemy
     private void Update()
     {
-        if (toa)
+        if (gameStarted)
         {
-            enemy.Move();
+            tpEnemy.Move();
+            blinkEnemy.Move();
         }
 
         // testirame skokanje
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            enemy.Jump();
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    tpEnemy.Jump();
+        //}
     }
 
     public void PlayPressed()
     {
-        toa = true;
+        gameStarted = true;
     }
 }

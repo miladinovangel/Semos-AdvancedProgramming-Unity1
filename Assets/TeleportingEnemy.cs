@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TeleportingEnemy : BaseEnemy
 {
-    public float teleportRange;
+    [SerializeField]
+    private float teleportRange;
 
     private void Start()
     {
@@ -13,7 +14,7 @@ public class TeleportingEnemy : BaseEnemy
     }
 
     [ContextMenu("Teleport")] // magija - dodava kontekst meni koga ke stisneme na 3te tocki na skriptata so ime Teleport, so klik na toa kopce se povikuva funkcijata
-    public void Teleport()
+    private void Teleport()
     {
         Vector3 pos = transform.position;
         pos.z += GetRandomRange();
@@ -24,5 +25,10 @@ public class TeleportingEnemy : BaseEnemy
     private float GetRandomRange()
     {
         return Random.Range(-teleportRange, teleportRange);
+    }
+
+    public override void Jump()
+    {
+        rb.AddForce(Vector3.up * jumpForce* 0.5f);
     }
 }
