@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// ENCAPSULACIJA - 
+// ENCAPSULACIJA - koncept vo objektno orientirano programiranje koj ni ukazuva deka site
+// klasi treba da bidat zatvoreni kolku sto e mozno poveke
 
 public abstract class BaseEnemy : MonoBehaviour
 {
