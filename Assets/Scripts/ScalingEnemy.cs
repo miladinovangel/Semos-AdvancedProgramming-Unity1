@@ -14,7 +14,11 @@ public class ScalingEnemy : BaseEnemy
     public void Scale()
     {
         Vector3 scale = transform.localScale;
-        scale.x += scalingSpeed * Time.deltaTime;
+        //scale.x += scalingSpeed * Time.deltaTime;
+        //scale.y += scalingSpeed * Time.deltaTime;
+        //scale.z += scalingSpeed * Time.deltaTime;
+        float increment = scalingSpeed * Time.deltaTime;
+        scale += new Vector3(increment, increment, increment);
         transform.localScale = scale;
     }
 }
