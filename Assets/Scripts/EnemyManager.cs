@@ -14,6 +14,8 @@ public class EnemyManager : MonoBehaviour
     //private ScalingEnemy scalingEnemy;
     [SerializeField]
     private BaseEnemy[] enemies;
+    [SerializeField]
+    private Transform player;
 
     private bool gameStarted = false;
 
@@ -27,7 +29,7 @@ public class EnemyManager : MonoBehaviour
             //scalingEnemy.Move();
             for (int i = 0; i < enemies.Length; i++)
             {
-                enemies[i].Move();
+                enemies[i].Move(player.position);
             }
 
             if (Input.GetKeyDown(KeyCode.Space))

@@ -16,11 +16,19 @@ public abstract class BaseEnemy : MonoBehaviour
     [SerializeField]
     protected Rigidbody rb;
 
-    public void Move() // dvizenje
+
+    public virtual void Move(Vector3 targetPosition) // dvizenje
     {
+        //Vector3 position = transform.position;
+        //position.z -= speed * Time.deltaTime;
+        //transform.position = position;
+
+        // logika sto ke go dvizi ovoj enemy objekt kon pozicijata moveTowards
         Vector3 position = transform.position;
-        position.z -= speed * Time.deltaTime;
+        position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * speed);
         transform.position = position;
+
+        //Vector3.Distance() - funkcija koja vraka rastojanie pomegu 2 objekti/vektori
     }
 
     public virtual void Jump()

@@ -522,7 +522,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!1 &290923722
 GameObject:
@@ -805,7 +805,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!136 &704470233
 CapsuleCollider:
@@ -1437,7 +1437,7 @@ GameObject:
   - component: {fileID: 1692713092}
   - component: {fileID: 1692713091}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: EnemyManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1461,6 +1461,7 @@ MonoBehaviour:
   - {fileID: 704470236}
   - {fileID: 64804606}
   - {fileID: 566773812}
+  player: {fileID: 290923727}
 --- !u!4 &1692713092
 Transform:
   m_ObjectHideFlags: 0
@@ -1579,7 +1580,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!136 &1884728848
 CapsuleCollider:
