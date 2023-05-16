@@ -46,3 +46,12 @@ public class PlayerController : MonoBehaviour
         speed /= 1.2f;
     }
 }
+
+// Zadaca 3
+// SpeedPowerupCollectable ne treba da go ima na pocetokot na scenata
+// treba da napravite da se pojavuva na sekoj random sekundi od 10 do 20
+// da izceznuva posle 5 sekundi
+
+//1. so couroutine
+//2. Instantiate - dynamic kreiranje na objekt
+//3. prefab
