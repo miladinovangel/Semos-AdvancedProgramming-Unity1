@@ -29,7 +29,8 @@ public class EnemyManager : MonoBehaviour
             //scalingEnemy.Move();
             for (int i = 0; i < enemies.Length; i++)
             {
-                enemies[i].Move(player.position);
+                //if (enemies[i] != null)
+                 enemies[i].Move(player.position);
             }
 
             if (Input.GetKeyDown(KeyCode.Space))

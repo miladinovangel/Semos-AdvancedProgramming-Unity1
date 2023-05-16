@@ -7,6 +7,17 @@ public class BulletController : MonoBehaviour
     [SerializeField]
     private float speed = 1f;
 
+    private void Start()
+    {
+        Destroy(gameObject, 5f);
+        //Invoke("DestroySelf", 5f); // drug nacin kako moze da se samounisti kursumot
+    }
+
+    //private void DestroySelf()
+    //{
+    //    Destroy(gameObject);
+    //}
+
     private void Update()
     {
         Move();
