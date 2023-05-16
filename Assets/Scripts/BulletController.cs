@@ -29,3 +29,8 @@ public class BulletController : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 }
+
+
+// imame nov objekt koj sto player-ot treba da moze da go sobere
+// koga ke go sobere, dobiva 20% pogolema brzina na 3 sekundi
+// kockata treba da ja napravite bavno da se rotira

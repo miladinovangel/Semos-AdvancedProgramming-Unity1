@@ -39,5 +39,23 @@ public class PlayerController : MonoBehaviour
             GameObject bulletInstance = Instantiate(bulletPrefab); // kreirame instanca od objektot bullet prefab
             bulletInstance.transform.position = bulletSpawnPosition.position;
         }
+
+
+    }
+    void ResetSpeed ()
+    {
+        speed /= 1.2f;
+    }
+    private void OnCollisionEnter(Collision other)
+    {
+        
+        if (other.gameObject.tag == "RotatingBox")
+        {
+            Destroy(other.gameObject);
+            speed *= 1.2f;
+            Invoke("ResetSpeed", 3f);
+        }
+        
+      
     }
 }
