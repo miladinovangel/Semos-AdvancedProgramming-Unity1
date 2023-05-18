@@ -421,8 +421,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectablePrefab: {fileID: 872597614244908285, guid: 1ece38f88d876a54b938c4be4dad8710, type: 3}
-  initialSpawnTimer1: 3
-  initialSpawnTimer2: 10
+  initialSpawnTimer1: 1
+  initialSpawnTimer2: 2
 --- !u!4 &95403640
 Transform:
   m_ObjectHideFlags: 0

@@ -22,7 +22,11 @@ public class CollectableSpawners : MonoBehaviour
         {
             float randomNumber = Random.Range(initialSpawnTimer1, initialSpawnTimer2); // generate random number
             yield return new WaitForSeconds(randomNumber); // wait the amount of the random number
-            GameObject collectableInstantiate = Instantiate(collectablePrefab, transform.position, Quaternion.identity);// create collectable prefab and save it in a variable
+            //1. Vector3 position = new Vector3(Random.Range(-5f, 5f), 1.18f, Random.Range(-5f, 5f));
+            Vector3 position = collectablePrefab.transform.position;
+            position.x = Random.Range(-5f, 5f);
+            position.z = Random.Range(-5f, 5f);
+            GameObject collectableInstantiate = Instantiate(collectablePrefab, position, Quaternion.identity);// create collectable prefab and save it in a variable
             yield return new WaitForSeconds(5f); // wait 5 seconds
             if (collectableInstantiate != null) // null check - check if the object is destroyed
             {
