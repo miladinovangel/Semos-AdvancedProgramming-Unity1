@@ -11,7 +11,12 @@ public class CollectableSpawners : MonoBehaviour
     [SerializeField]
     private float initialSpawnTimer2;
 
-    private void Start()
+    //private void Start()
+    //{
+    //    //StartCoroutine(CreateCollectables());
+    //}
+
+    public void GameStarted()
     {
         StartCoroutine(CreateCollectables());
     }
@@ -23,6 +28,7 @@ public class CollectableSpawners : MonoBehaviour
             float randomNumber = Random.Range(initialSpawnTimer1, initialSpawnTimer2); // generate random number
             yield return new WaitForSeconds(randomNumber); // wait the amount of the random number
             //1. Vector3 position = new Vector3(Random.Range(-5f, 5f), 1.18f, Random.Range(-5f, 5f));
+            //2.
             Vector3 position = collectablePrefab.transform.position;
             position.x = Random.Range(-5f, 5f);
             position.z = Random.Range(-5f, 5f);
