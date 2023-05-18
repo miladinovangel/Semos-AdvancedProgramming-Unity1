@@ -55,3 +55,8 @@ public class PlayerController : MonoBehaviour
 //1. so couroutine
 //2. Instantiate - dynamic kreiranje na objekt
 //3. prefab
+
+
+// Zadaca 4
+// napiste logika sto ke kreira enemy 1 objekti na random pozicija na sekoj 7-10 sec
+// koga ke klikneme play, togas treba da ni se pojavuvaat enemies
