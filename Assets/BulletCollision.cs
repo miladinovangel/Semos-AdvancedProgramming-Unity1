@@ -9,11 +9,12 @@ public class BulletCollision : MonoBehaviour
     {
         // treba da se unisti enemy
         //Destroy(other.gameObject);
-        
+
         // treba da se unisti kursumot
         if (other.gameObject.tag == "Enemy")
         {
-            other.gameObject.SetActive(false);
+            //other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
         }
         Destroy(gameObject.transform.parent.gameObject);
     }

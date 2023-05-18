@@ -6,6 +6,8 @@ public class BulletController : MonoBehaviour
 {
     [SerializeField]
     private float speed = 1f;
+    [SerializeField]
+    private Rigidbody rb;
 
     private void Start()
     {
@@ -18,16 +20,21 @@ public class BulletController : MonoBehaviour
     //    Destroy(gameObject);
     //}
 
-    private void Update()
+    //private void Update() // na sekoj frame - Time.deltaTime
+    //{
+    //    Move();
+    //}
+
+    private void FixedUpdate() // na sekoj update na physics engine - 0.02
     {
-        Move();
+        rb.velocity = new Vector3(0f, 0f, speed);
     }
 
-    private void Move()
-    {
-        //Vector3 pos = transform.position;
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
-    }
+    //private void Move()
+    //{
+    //    //Vector3 pos = transform.position;
+    //    //transform.Translate(Vector3.forward * speed * Time.deltaTime);
+    //}
 }
 
 

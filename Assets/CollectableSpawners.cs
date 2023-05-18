@@ -18,7 +18,8 @@ public class CollectableSpawners : MonoBehaviour
 
     public void GameStarted()
     {
-        StartCoroutine(CreateCollectables());
+        if (gameObject.activeInHierarchy)
+            StartCoroutine(CreateCollectables());
     }
 
     private IEnumerator CreateCollectables()
