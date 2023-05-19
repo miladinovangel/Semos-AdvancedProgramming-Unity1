@@ -35,7 +35,7 @@ public class EnemyManager : MonoBehaviour
                     {
                         tmp[j] = enemies[j];
                     }
-
+                    // copy the elements after the element you want to remove
                     for (int j = indexOfEnemyToBeDestroyed; j < enemies.Length-1; j++)
                     {                       
                         tmp[j] = enemies[j+1];
