@@ -2,52 +2,86 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// polymorphism - poly - mnogu, morphism - formi
+public class Potato
+{
+
+}
 
 public class EnemyManager : MonoBehaviour
 {
     [SerializeField]
     private TeleportingEnemy enemyPrefab;
     [SerializeField]
-    private BaseEnemy[] enemies;
-    [SerializeField]
     private Transform player;
-
     private bool gameStarted = false;
+    //private CustomArray array = new CustomArray();
 
-    
+    [SerializeField]
+    private int[] TEST1;
+    private BaseEnemy[] ttttt;
+
+
+    private List<BaseEnemy> enemies = new List<BaseEnemy>();
+    private List<Potato> potatos = new List<Potato>();
+
+    //private void Start()
+    //{
+    //    //enemies.Add()
+    //    enemies.RemoveAt(3);
+
+    //    if (TEST1 == null)
+    //    {
+    //        Debug.Log("TEST is NULL");
+    //    }
+    //    // experiment 
+    //    CustomArrayString playerNames = new CustomArrayString();
+    //    playerNames.AddElement("Angel");
+    //    playerNames.AddElement("Martin");
+    //    playerNames.AddElement("Viktor");
+    //    string randomName = playerNames.array[Random.Range(0, 3)];
+    //    Debug.Log(randomName);
+
+
+    //    CustomGenericArray<string> genericStringArray = new CustomGenericArray<string>();
+    //    genericStringArray.AddElement("Angel");
+    //    genericStringArray.AddElement("Martin");
+    //    genericStringArray.AddElement("Viktor");
+    //    randomName = genericStringArray.array[Random.Range(0, 3)];
+    //}
+
+    private void Start()
+    {
+        List<int> integers = new List<int>();
+        integers.Add(2);
+        integers.Add(3);
+        integers.Add(1);
+        integers.Add(8);
+        integers.Add(-1);
+
+        integers.Remove(1);
+        integers.RemoveAt(0);
+
+        List<string> strings = new List<string>();
+        strings.Add("qwerty");
+        strings.Add("testtest");
+
+        strings.RemoveAt(1);
+    }
+
     private void Update()
     {
         if (gameStarted)
         {
-
-            for (int i = 0; i < enemies.Length; i++)
+            for (int i = 0; i < enemies.Count; i++)
             {
                 if (enemies[i] == null)
                 {
-                    // izbrisi go od nizata
-                    // brisi go elementot so index i
-                    // prodolzi so ciklusot
-                    int indexOfEnemyToBeDestroyed = i;
-                    BaseEnemy[] tmp = new BaseEnemy[enemies.Length - 1];
-                    // copy the elemennts until the element you want to remove(i)
-                    for(int j=0; j < indexOfEnemyToBeDestroyed; j++)
-                    {
-                        tmp[j] = enemies[j];
-                    }
-                    // copy the elements after the element you want to remove
-                    for (int j = indexOfEnemyToBeDestroyed; j < enemies.Length-1; j++)
-                    {                       
-                        tmp[j] = enemies[j+1];
-                    }
-                    enemies = tmp;
-                    continue; //vs break;
-                }
+                    enemies.RemoveAt(i);
 
+                    continue;
+                }
                 enemies[i].Move(player.position);
             }
-
-
         }
     }
 
@@ -65,19 +99,9 @@ public class EnemyManager : MonoBehaviour
             Vector3 pos = new Vector3(Random.Range(-1f, 1f), 1f, Random.Range(-1f, 1f));
             BaseEnemy enemyInstance = Instantiate(enemyPrefab, pos, Quaternion.identity);
             enemyInstance.gameObject.SetActive(true);
-            // enemyInstance treba da go stavime vo nizata
-
-            BaseEnemy[] tmp = new BaseEnemy[enemies.Length + 1];
-            // kopiranje na site elementi
-            for (int i = 0; i < enemies.Length; i++)
-            {
-                tmp[i] = enemies[i];
-            }
-            tmp[enemies.Length] = enemyInstance; // go dodavame vo novata niza
-            enemies = tmp; // promenlivata enemies ke pokazuva kon novata niza
+            enemies.Add(enemyInstance);
 
             yield return new WaitForSeconds(.5f);
-
         }
     }
 }
