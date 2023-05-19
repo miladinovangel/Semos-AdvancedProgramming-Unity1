@@ -29,6 +29,12 @@ public class EnemyManager : MonoBehaviour
                 enemies[i].Move(player.position);
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
+            camera.transform.SetParent(null);// ova ja vadi kamerata od playerot i ja stava vo root vo hierarchy
+        }
     }
 
     public void PlayPressed()
