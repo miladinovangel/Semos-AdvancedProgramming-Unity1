@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    [SerializeField]
-    private TeleportingEnemy enemyPrefab;
+    //[SerializeField]
+    //private TeleportingEnemy ;
     [SerializeField]
     private Transform player;
     private bool gameStarted = false;
     private List<BaseEnemy> enemies = new List<BaseEnemy>();
+    [SerializeField]
+    private List<BaseEnemy> enemyPrefabs;
 
     private void Update()
     {
@@ -40,12 +42,19 @@ public class EnemyManager : MonoBehaviour
     {
         while (true)
         {
-            Vector3 pos = new Vector3(Random.Range(-1f, 1f), 1f, Random.Range(-1f, 1f));
-            BaseEnemy enemyInstance = Instantiate(enemyPrefab, pos, Quaternion.identity);
+            Vector3 pos = new Vector3(Random.Range(-5f, 5f), 1f, Random.Range(-5f, 5f));
+
+            int randomIndex = Random.Range(0, enemyPrefabs.Count);// generate random index
+            BaseEnemy randomEnemy = enemyPrefabs[randomIndex]; // select random enemy
+            BaseEnemy enemyInstance = Instantiate(randomEnemy, pos, Quaternion.identity);// create random enemy
             enemyInstance.gameObject.SetActive(true);
             enemies.Add(enemyInstance);
 
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(3f);
         }
     }
 }
+
+
+// a. koga enemy ke se sudri so player, treba da se unisti player-ot i da se prikaze game over text
+// b. player-ot da ima 10 health, treba enemy objekt da go dopre player-ot 10 pati za da se unisti
