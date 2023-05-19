@@ -28,6 +28,19 @@ public class EnemyManager : MonoBehaviour
                     // izbrisi go od nizata
                     // brisi go elementot so index i
                     // prodolzi so ciklusot
+                    int indexOfEnemyToBeDestroyed = i;
+                    BaseEnemy[] tmp = new BaseEnemy[enemies.Length - 1];
+                    // copy the elemennts until the element you want to remove(i)
+                    for(int j=0; j < indexOfEnemyToBeDestroyed; j++)
+                    {
+                        tmp[j] = enemies[j];
+                    }
+
+                    for (int j = indexOfEnemyToBeDestroyed; j < enemies.Length-1; j++)
+                    {                       
+                        tmp[j] = enemies[j+1];
+                    }
+                    enemies = tmp;
                     continue; //vs break;
                 }
 
