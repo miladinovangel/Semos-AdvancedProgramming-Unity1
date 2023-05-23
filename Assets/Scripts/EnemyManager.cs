@@ -13,6 +13,7 @@ public class EnemyManager : MonoBehaviour
     private List<BaseEnemy> enemies = new List<BaseEnemy>();
     [SerializeField]
     private List<BaseEnemy> enemyPrefabs;
+    
 
     private void Update()
     {
@@ -26,7 +27,10 @@ public class EnemyManager : MonoBehaviour
 
                     continue;
                 }
-                enemies[i].Move(player.position);
+                else if (player != null)
+                {
+                    enemies[i].Move(player.position);
+                }
             }
         }
 

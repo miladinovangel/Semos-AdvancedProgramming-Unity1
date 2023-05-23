@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform bulletSpawnPosition;
+    [SerializeField] private GameObject gameOverText;
 
     void Update()
     {
@@ -38,6 +39,13 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
             speed *= 1.2f;
             Invoke("ResetSpeed", 3f);
+        }
+        if (other.gameObject.tag == "Enemy")
+        {
+            GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
+            camera.transform.SetParent(null);
+            gameOverText.SetActive(true);
+            Destroy(gameObject);
         }
     }
 
