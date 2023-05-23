@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    //[SerializeField]
-    //private TeleportingEnemy ;
     [SerializeField]
     private Transform player;
     private bool gameStarted = false;

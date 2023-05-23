@@ -12,29 +12,12 @@ public class BulletController : MonoBehaviour
     private void Start()
     {
         Destroy(gameObject, 5f);
-        //Invoke("DestroySelf", 5f); // drug nacin kako moze da se samounisti kursumot
     }
-
-    //private void DestroySelf()
-    //{
-    //    Destroy(gameObject);
-    //}
-
-    //private void Update() // na sekoj frame - Time.deltaTime
-    //{
-    //    Move();
-    //}
 
     private void FixedUpdate() // na sekoj update na physics engine - 0.02
     {
         rb.velocity = new Vector3(0f, 0f, speed);
     }
-
-    //private void Move()
-    //{
-    //    //Vector3 pos = transform.position;
-    //    //transform.Translate(Vector3.forward * speed * Time.deltaTime);
-    //}
 }
 
 

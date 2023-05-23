@@ -46,12 +46,21 @@ public class PlayerController : MonoBehaviour
             playerHealth--;
             if (playerHealth <= 0)
             {
-                GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
-                camera.transform.SetParent(null);
+                GetCameraOutOfPlayer();
+
+                // turn on game over text
                 gameOverText.SetActive(true);
+
+                // destory player
                 Destroy(gameObject);
             }
         }
+    }
+
+    private void GetCameraOutOfPlayer()
+    {
+        GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
+        camera.transform.SetParent(null);
     }
 
     private void ResetSpeed()
