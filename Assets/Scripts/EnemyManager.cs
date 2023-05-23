@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
 public class EnemyManager : MonoBehaviour
@@ -11,9 +12,14 @@ public class EnemyManager : MonoBehaviour
     private List<BaseEnemy> enemies = new List<BaseEnemy>();
     [SerializeField]
     private List<BaseEnemy> enemyPrefabs;
+    private int hitCounter = 0;
+    [SerializeField] private TextMeshProUGUI scoreText;
 
-    
 
+    private void Start()
+    {
+        UpdateScoreUI();
+    }
     private void Update()
     {
         if (gameStarted)
@@ -22,6 +28,8 @@ public class EnemyManager : MonoBehaviour
             {
                 if (enemies[i] == null)
                 {
+                    hitCounter++;
+                    UpdateScoreUI();
                     enemies.RemoveAt(i);
 
                     continue;
@@ -39,7 +47,10 @@ public class EnemyManager : MonoBehaviour
             camera.transform.SetParent(null);// ova ja vadi kamerata od playerot i ja stava vo root vo hierarchy
         }
     }
-
+    private void UpdateScoreUI()
+    {
+        scoreText.text = $"Score: {hitCounter}";
+    }
     public void PlayPressed()
     {
         gameStarted = true;
@@ -70,3 +81,6 @@ public class EnemyManager : MonoBehaviour
 
 
 // dodadete UI element na gorniot del od ekranot koj ke prikazuva kolku zivoti ima player-ot
+
+
+// dodadi UI text vo gorniot lev agol koj ke prikazuva kolku enemies ima unisteno player-ot

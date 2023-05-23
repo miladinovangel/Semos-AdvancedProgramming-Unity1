@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     {
         UpdatePlayerHealthUI();
     }
+
     void Update()
     {
         if (Input.GetKey(KeyCode.UpArrow))
