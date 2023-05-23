@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -6,8 +7,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform bulletSpawnPosition;
     [SerializeField] private GameObject gameOverText;
+    [SerializeField] private TextMeshProUGUI playerHealthText;
     [SerializeField]private int playerHealth;
 
+    private void Start()
+    {
+        UpdatePlayerHealthUI();
+    }
     void Update()
     {
         if (Input.GetKey(KeyCode.UpArrow))
@@ -44,6 +50,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             playerHealth--;
+            UpdatePlayerHealthUI();
             if (playerHealth <= 0)
             {
                 GetCameraOutOfPlayer();
@@ -55,6 +62,11 @@ public class PlayerController : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+
+    private void UpdatePlayerHealthUI()
+    {
+        playerHealthText.text = $"Health: {playerHealth}";
     }
 
     private void GetCameraOutOfPlayer()
