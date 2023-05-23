@@ -85,3 +85,7 @@ public class EnemyManager : MonoBehaviour
 
 
 // dodadi UI text vo gorniot lev agol koj ke prikazuva kolku enemies ima unisteno player-ot
+
+// a. treba da kreirate nov tip na enemy ShootingEnemy, nova skirpta koja nasleduva od base enemy i nov prefab za ovoj objekt
+// b. treba da napisete logika koja ke puka slicno na player
+// c. koga player-ot ke bide pogoden od takov tip na kursum, treba da mu se namaluva health-ot
