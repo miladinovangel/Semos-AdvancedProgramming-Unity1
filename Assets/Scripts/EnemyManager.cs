@@ -67,3 +67,6 @@ public class EnemyManager : MonoBehaviour
 
 // a. koga enemy ke se sudri so player, treba da se unisti player-ot i da se prikaze game over text
 // b. player-ot da ima 10 health, treba enemy objekt da go dopre player-ot 10 pati za da se unisti
+
+
+// dodadete UI element na gorniot del od ekranot koj ke prikazuva kolku zivoti ima player-ot
