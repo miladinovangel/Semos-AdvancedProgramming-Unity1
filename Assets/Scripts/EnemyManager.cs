@@ -47,6 +47,7 @@ public class EnemyManager : MonoBehaviour
             camera.transform.SetParent(null);// ova ja vadi kamerata od playerot i ja stava vo root vo hierarchy
         }
     }
+
     private void UpdateScoreUI()
     {
         scoreText.text = $"Score: {hitCounter}";
@@ -66,7 +67,7 @@ public class EnemyManager : MonoBehaviour
 
             int randomIndex = Random.Range(0, enemyPrefabs.Count);// generate random index
             BaseEnemy randomEnemy = enemyPrefabs[randomIndex]; // select random enemy
-            BaseEnemy enemyInstance = Instantiate(randomEnemy, pos, Quaternion.identity);// create random enemy
+            BaseEnemy enemyInstance = Instantiate(randomEnemy, pos, Quaternion.identity, transform);// create random enemy
             enemyInstance.gameObject.SetActive(true);
             enemies.Add(enemyInstance);
 

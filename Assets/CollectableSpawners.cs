@@ -33,7 +33,7 @@ public class CollectableSpawners : MonoBehaviour
             Vector3 position = collectablePrefab.transform.position;
             position.x = Random.Range(-5f, 5f);
             position.z = Random.Range(-5f, 5f);
-            GameObject collectableInstantiate = Instantiate(collectablePrefab, position, Quaternion.identity);// create collectable prefab and save it in a variable
+            GameObject collectableInstantiate = Instantiate(collectablePrefab, position, Quaternion.identity, transform);// create collectable prefab and save it in a variable
             yield return new WaitForSeconds(5f); // wait 5 seconds
             if (collectableInstantiate != null) // null check - check if the object is destroyed
             {
