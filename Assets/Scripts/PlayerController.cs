@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform bulletSpawnPosition;
     [SerializeField] private GameObject gameOverText;
+    [SerializeField]private int playerHealth;
 
     void Update()
     {
@@ -42,10 +43,14 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.tag == "Enemy")
         {
-            GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
-            camera.transform.SetParent(null);
-            gameOverText.SetActive(true);
-            Destroy(gameObject);
+            playerHealth--;
+            if (playerHealth <= 0)
+            {
+                GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
+                camera.transform.SetParent(null);
+                gameOverText.SetActive(true);
+                Destroy(gameObject);
+            }
         }
     }
 

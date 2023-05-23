@@ -474,6 +474,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7382127699342051928, guid: fd023af8252c5dd4888f5340cdd4444c, type: 3}
   bulletSpawnPosition: {fileID: 1035315282}
   gameOverText: {fileID: 1507568099}
+  playerHealth: 10
 --- !u!136 &290923724
 CapsuleCollider:
   m_ObjectHideFlags: 0

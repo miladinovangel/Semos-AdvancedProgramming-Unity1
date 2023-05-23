@@ -13,6 +13,7 @@ public class EnemyManager : MonoBehaviour
     private List<BaseEnemy> enemies = new List<BaseEnemy>();
     [SerializeField]
     private List<BaseEnemy> enemyPrefabs;
+
     
 
     private void Update()
