@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class ShotingEnemy : BaseEnemy
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform bulletSpawnPosition;
+    private void Start()
     {
-        
+        StartCoroutine(CreateBullets());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator CreateBullets()
     {
-        
+        yield return new WaitForSeconds(0.5f);
+        while (true)
+        {           
+            GameObject bulletInstance = Instantiate(bulletPrefab);
+            bulletInstance.transform.position = bulletSpawnPosition.position;
+            yield return new WaitForSeconds(3f);
+        }
     }
 }
