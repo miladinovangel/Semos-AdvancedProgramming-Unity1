@@ -18,10 +18,4 @@ public class BulletOfEnemy : MonoBehaviour
     {
         rb.velocity = new Vector3(0f, 0f, speed);
     }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        Debug.Log("BulletOfEnemy:OnCollision enter");
-        Destroy(gameObject);
-    }
 }

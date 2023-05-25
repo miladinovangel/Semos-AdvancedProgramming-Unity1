@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3802141251587487024}
-  - component: {fileID: 5086092118059024245}
+  - component: {fileID: 6474890467107282534}
   m_Layer: 0
   m_Name: BulletOfEnemy
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5086092118059024245
+--- !u!114 &6474890467107282534
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,7 +42,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3802141251587487026}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3862f609afcaf704ab420096b988d58f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3accd266c597b2d42848eeba13d9b99b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -10
@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 196257453856622787}
   - component: {fileID: 8661124257146168148}
   - component: {fileID: 6572981277650155592}
+  - component: {fileID: 1860089412565761932}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Enemy
@@ -162,3 +163,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1860089412565761932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5426755042926346902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be8ed679c85c154da1a60de43afb5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

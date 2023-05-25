@@ -42,7 +42,6 @@ public class PlayerController : MonoBehaviour
     
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("PLAYERCONTROLLER:OnCollision " + other.gameObject.name);
         if (other.gameObject.tag == "SpeedPowerupCollectable")
         {
             Destroy(other.gameObject);
@@ -51,7 +50,6 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.tag == "Enemy")
         {
-            Debug.Log("PLAYERCONTROLLER:OnCollision Enemy");
             playerHealth--;
             UpdatePlayerHealthUI();
             if (playerHealth <= 0)
