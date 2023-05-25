@@ -88,4 +88,5 @@ public class EnemyManager : MonoBehaviour
 
 // a. treba da kreirate nov tip na enemy ShootingEnemy, nova skirpta koja nasleduva od base enemy i nov prefab za ovoj objekt
 // b. treba da napisete logika koja ke puka slicno na player
-// c. koga player-ot ke bide pogoden od takov tip na kursum, treba da mu se namaluva health-ot
+// c. da se dodade vo logikata na spawning na EnemyManager 
+// d. koga player-ot ke bide pogoden od takov tip na kursum, treba da mu se namaluva health-ot
